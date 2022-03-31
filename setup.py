@@ -1,11 +1,7 @@
-from ship import ship
+from battleship.engine import engine
 
 def main():
-    shipOne = ship()
-    shipOne.setRandomPosition()
-    shipTwo = ship()
-    print(shipOne)
-    print("h")
-
+    engine()
 if __name__ == "__main__":
     main()
+    

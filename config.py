@@ -11,3 +11,4 @@ class Config:
     # Flask configuration
     BOARD_SIZE = environ.get('BOARD_SIZE')
     NUMBER_OF_SHIPS = environ.get('NUMBER_OF_SHIPS')
+    NUMBER_OF_TRIES = environ.get('NUMBER_OF_TRIES')
