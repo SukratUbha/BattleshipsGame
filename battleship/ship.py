@@ -3,23 +3,28 @@ from config import Config
 
 class ship():
     def __init__(self):
-        self.x = 0
-        self.y = 0
+        self.x = random.randint(1,int(Config.BOARD_SIZE_X))
+        self.y = random.randint(1,int(Config.BOARD_SIZE_Y))
     
-    def setRandomPosition(self):
-        self.x = random.randint(1,int(Config.BOARD_SIZE))
-        self.y = random.randint(1,int(Config.BOARD_SIZE))
+    def getCoordinates(self, flag: bool):
+        if flag == True:
+            return self.x, self.y
+        return f"{self.x},{self.y}"
         
     def __repr__(self):
-        return "This ship is located at {} {}  ".format(self.x, self.y)
+        return f"This ship is located at {self.x},{self.y}"
 
     def __eq__(self, other):
-        print(other)
-        if isinstance(other,ship):
-            print("Checking equality...")
+        #Using isinstance for user input comparison below
+        if isinstance(other,str):
+            if other == self.getCoordinates(False):
+                return True
+            else:
+                return False
+        try:
             if other.x == self.x and other.y == self.y:
                 return True
             else:
                 return False
-        else:
+        except:
             return "Invalid Type Comparison"
