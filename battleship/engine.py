@@ -1,3 +1,4 @@
+from dis import dis
 from battleship.ship import ship
 from config import Config
 from math import inf
@@ -25,9 +26,11 @@ class engine:
                 nDistance = abs(inputList[0]-x) + abs(inputList[1]-y)
                 if nDistance<distance:
                     distance = nDistance
-            if 1 <= distance <= 2:
+            if distance == 0:
+                return "Hit"
+            elif distance < 3:
                 return "Hot"
-            elif 3 <= distance <= 4:
+            elif distance < 5:
                 return "Warm"
             else:
                 return "Cold"

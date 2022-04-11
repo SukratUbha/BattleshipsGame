@@ -17,14 +17,7 @@ class ship():
     def __eq__(self, other):
         #Using isinstance for user input comparison below
         if isinstance(other,str):
-            if other == self.getCoordinates(False):
-                return True
-            else:
-                return False
-        try:
-            if other.x == self.x and other.y == self.y:
-                return True
-            else:
-                return False
-        except:
-            return "Invalid Type Comparison"
+            return other == self.getCoordinates(False)
+        if isinstance(other, ship):
+            return other.x == self.x and other.y == self.y
+        raise ValueError("Invalid Type Comparison")
