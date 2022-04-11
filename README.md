@@ -1,6 +1,6 @@
 # BattleshipsGame
 ---------------------------------------------------------------------------
-An object oriented approach to a simple text input-output battleships game
+An object oriented approach to a text input-output battleships game
 ---------------------------------------------------------------------------
 To run:
 
